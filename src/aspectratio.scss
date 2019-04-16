@@ -1,0 +1,62 @@
+// aspect ratio css (v:1.0) 
+// By Niklas Wagner
+// ======================================================================
+// table of contents:
+// 1. variables
+// 2. mixins
+// 3. styles
+// ======================================================================
+
+// variables
+// ======================================================================
+
+// aspect ratios
+// this variable defines the generated aspect ratios
+// format: list(list(integer for aspect x portion, integer for aspect y portion), (x,y), (x,y))
+$aspectRatios: ((1,1), (2,1), (16,5), (16,9), (16,10));
+
+// aspect class prefix
+// this variable defines a prefix which will be assigned to any class associated with this script
+// format: string 
+$aspectClassPrefix: "aspect-";
+
+// mixins
+// ======================================================================
+
+// aspect generator
+@mixin aspectGenerator {
+    @each $aspectRatio in $aspectRatios {
+        $aspectX: nth($aspectRatio, 1);
+        $aspectY: nth($aspectRatio, 2);
+        .#{$aspectClassPrefix}#{$aspectX}x#{$aspectY} {
+            .#{$aspectClassPrefix}element {
+                padding-top: ($aspectY / $aspectX) * 100%;
+            }
+        }
+    }
+}
+
+// styles
+// ======================================================================
+
+// aspect generator include
+@include aspectGenerator();
+
+// aspect parent
+[class*="#{$aspectClassPrefix}"] {
+    display: flex;
+} 
+
+// aspect element
+[class*="#{$aspectClassPrefix}"] .#{$aspectClassPrefix}element {
+    display: block;
+    width: 100%;
+}
+
+// aspect content
+[class*="#{$aspectClassPrefix}"] .#{$aspectClassPrefix}content {
+    display: block;
+    position: relative;
+    margin-left: -100%;
+    width: 100%;
+}

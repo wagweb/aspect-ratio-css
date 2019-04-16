@@ -1,0 +1,27 @@
+.aspect-1x1 .aspect-element {
+  padding-top: 100%; }
+
+.aspect-2x1 .aspect-element {
+  padding-top: 50%; }
+
+.aspect-16x5 .aspect-element {
+  padding-top: 31.25%; }
+
+.aspect-16x9 .aspect-element {
+  padding-top: 56.25%; }
+
+.aspect-16x10 .aspect-element {
+  padding-top: 62.5%; }
+
+[class*="aspect-"] {
+  display: flex; }
+
+[class*="aspect-"] .aspect-element {
+  display: block;
+  width: 100%; }
+
+[class*="aspect-"] .aspect-content {
+  display: block;
+  position: relative;
+  margin-left: -100%;
+  width: 100%; }
