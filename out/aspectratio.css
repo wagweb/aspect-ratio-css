@@ -1,27 +1,44 @@
-.aspect-1x1 .aspect-element {
-  padding-top: 100%; }
-
-.aspect-2x1 .aspect-element {
-  padding-top: 50%; }
-
-.aspect-16x5 .aspect-element {
-  padding-top: 31.25%; }
-
-.aspect-16x9 .aspect-element {
-  padding-top: 56.25%; }
-
-.aspect-16x10 .aspect-element {
-  padding-top: 62.5%; }
-
-[class*="aspect-"] {
+.aspect-1x1 {
   display: flex; }
 
-[class*="aspect-"] .aspect-element {
-  display: block;
-  width: 100%; }
+.aspect-1x1::before {
+  padding-top: 100%;
+  width: 100%;
+  content: ""; }
 
-[class*="aspect-"] .aspect-content {
-  display: block;
+.aspect-2x1 {
+  display: flex; }
+
+.aspect-2x1::before {
+  padding-top: 50%;
+  width: 100%;
+  content: ""; }
+
+.aspect-16x5 {
+  display: flex; }
+
+.aspect-16x5::before {
+  padding-top: 31.25%;
+  width: 100%;
+  content: ""; }
+
+.aspect-16x9 {
+  display: flex; }
+
+.aspect-16x9::before {
+  padding-top: 56.25%;
+  width: 100%;
+  content: ""; }
+
+.aspect-16x10 {
+  display: flex; }
+
+.aspect-16x10::before {
+  padding-top: 62.5%;
+  width: 100%;
+  content: ""; }
+
+.aspect-content {
   position: relative;
   margin-left: -100%;
   width: 100%; }

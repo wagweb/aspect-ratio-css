@@ -1,6 +1,6 @@
 # Aspect ratio CSS
 
-A simple SCSS script for fixed aspect ratios in HTML
+A simple SCSS script for fixed aspect ratios in HTML that can grow when the content gets larger,
 
 ## What is this?
 
@@ -33,7 +33,6 @@ $aspectRatios: ((1,1), (2,1), (16,5), (16,9), (16,10));
 
 ```html
 <div class="aspect-16x9">
-    <div class="aspect-element"></div>
     <div class="aspect-content">
         <!-- your html content inside the aspect ratio goes into here -->
     </div>
